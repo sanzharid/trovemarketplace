@@ -19,3 +19,5 @@ underscore
 underscorestring:underscore.string
 kadira:flow-router
 kadira:blaze-layout
+themeteorchef:jquery-validation
+audit-argument-checks
