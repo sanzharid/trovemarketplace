@@ -21,3 +21,5 @@ kadira:flow-router
 kadira:blaze-layout
 themeteorchef:jquery-validation
 audit-argument-checks
+momentjs:moment
+lbee:moment-helpers
