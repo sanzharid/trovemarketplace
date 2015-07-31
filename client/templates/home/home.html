@@ -1,0 +1,31 @@
+<template name="home">
+  <div class="jumbotron">
+    <h1>Trove Marketplace</h1>
+    <p>This is a trove marketplace website where you can register for free and trade your items.</p>
+    <p>We support Facebook, Twitter and Google logins. No need to type in a password.</p>
+    <p>Ready to start trading?</p>
+    <hr />
+
+    <div class="row">
+      <div class="col-sm-6">
+        {{#if currentUser}}
+          <p>You're already signed in.</p>
+          <p>Why don't you <a href="/">list some stuff for sale</a> ?</p>
+        {{else}}
+          <p>Create your <b>free account</b>.</p>
+          {{> facebookLoginButton }}
+          {{> twitterLoginButton }}
+          {{> googleLoginButton }}
+        {{/if}}
+      </div>
+      <div class="col-sm-6">
+        <p>Features:</p>
+        <ul>
+          <li>100% free to use</li>
+          <li>Chat with potential buyers in real time</li>
+          <li>See price history for item</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
