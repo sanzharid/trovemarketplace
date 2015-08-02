@@ -36,7 +36,7 @@ Meteor.methods({
     var user = Meteor.user();
     var itemRecord = _.extend(item, {
       userId: user._id, 
-      owner: user.profile.name, 
+      owner: user.profile.ingameName || user.profile.name, 
       createdAt: new Date()
     });
 
@@ -57,7 +57,7 @@ Meteor.methods({
     var user = Meteor.user();
     var messageRecord = _.extend(message, {
       userId: user._id, 
-      owner: user.profile.name, 
+      owner: user.profile.ingameName || user.profile.name, 
       createdAt: new Date()
     });
 
