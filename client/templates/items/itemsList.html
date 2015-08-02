@@ -13,7 +13,11 @@
             <p>{{price}} Flux</p>
             <p>Listed: {{moFromNow createdAt}}</p>
             <hr />
-            <a class="btn btn-primary" href="/item-for-sale/{{_id}}">Chat With Seller</a>
+            <a class="btn btn-primary" href="/item-for-sale/{{_id}}">
+              Chat With Seller 
+              <i class="fa fa-comment"></i>
+              {{messageCount}}
+            </a>
           </div>
         </div>
       </div>

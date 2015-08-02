@@ -70,6 +70,11 @@ Meteor.methods({
     });
     
     var messageId = Messages.insert(messageRecord);
+    
+    Items.update(messageRecord.itemId, {
+      $inc: { messageCount: 1 }
+    });
+
     return { _id: messageId };
   }
 });
