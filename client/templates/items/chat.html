@@ -1,16 +1,20 @@
 <template name="chat">
   <div id="chat">
-    <div class="messages">
+    <div class="messages well">
       {{#each messages}}
-        <p><span title="{{moFormat createdAt}}">{{moFromNow createdAt}}</span> {{owner}}: {{text}}</p>
+        <p class="message"><span class="timestamp" title="{{moFormat createdAt}}">{{moFromNow createdAt}}</span> <span class="owner">{{owner}}</span>: {{text}}</p>
       {{/each}}
     </div>
-    <form class="form-inline">
-      <div class="form-group" style="width: 100%;">
-        <label for="message">Message</label>
-        <input type="text" class="form-control" name="message" id="message" placeholder="Would you sell for 200 flux?" style="width: 100%;">
-      </div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
+    {{#if currentUser}}
+      <form class="form-inline">
+        <div class="form-group" style="width: 100%;">
+          <label for="message">Message</label>
+          <input type="text" class="form-control" name="message" id="message" placeholder="Would you sell for 200 flux?" style="width: 100%;">
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    {{else}}
+      <p>Create your <a href="/">free account</a> to trade with sellers.</p>
+    {{/if}}
   </div>
 </template>
