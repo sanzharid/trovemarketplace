@@ -22,10 +22,12 @@ Template.chat.events({
       itemId: FlowRouter.getParam('itemId')
     }
 
-    Meteor.call('newMessage', message, function(error, result) {
-      if (error)
-        return alert(error.reason);
-      event.target.message.value = "";
-    });
+    if (message.text != "") {
+      Meteor.call('newMessage', message, function(error, result) {
+        if (error)
+          return alert("You can't send an empty message bruh.");
+        event.target.message.value = "";
+      });
+    }
   }
 });

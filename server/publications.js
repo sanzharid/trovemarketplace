@@ -68,7 +68,6 @@ Meteor.methods({
       owner: String,
       createdAt: Date
     });
-
     
     var messageId = Messages.insert(messageRecord);
     return { _id: messageId };
