@@ -14,6 +14,23 @@ Meteor.publish('messages', function(itemId) {
   return Messages.find({itemId: itemId});
 });
 
+Meteor.publish('itemsWithSkip', function(skip, limit) {
+  check(skip, Number);
+  check(limit, Number);
+  var options;
+  Counts.publish(this, 'total_items', Items.find());
+  if (skip < 0) {
+    skip = 0;
+  }
+  options = {};
+  options.skip = skip;
+  options.limit = limit;
+  options.sort = {
+    createdAt: 1
+  };
+  return Items.find({}, options);
+});
+
 Meteor.methods({
   newItem: function (item) {
     var user = Meteor.user();
