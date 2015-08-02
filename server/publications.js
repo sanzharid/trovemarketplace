@@ -26,7 +26,7 @@ Meteor.publish('itemsWithSkip', function(skip, limit) {
   options.skip = skip;
   options.limit = limit;
   options.sort = {
-    createdAt: 1
+    createdAt: -1
   };
   return Items.find({}, options);
 });
