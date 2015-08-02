@@ -24,3 +24,6 @@ audit-argument-checks
 momentjs:moment
 lbee:moment-helpers
 tmeasday:publish-counts
+dburles:collection-helpers
+juliancwirko:s-alert
+juliancwirko:s-alert-scale
