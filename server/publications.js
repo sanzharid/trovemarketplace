@@ -14,6 +14,10 @@ Meteor.publish('messages', function(itemId) {
   return Messages.find({itemId: itemId});
 });
 
+Meteor.publish("userStatus", function() {
+  Counts.publish(this, 'usersOnline', Meteor.users.find({ "status.online": true }));
+});
+
 Meteor.publish('itemsWithSkip', function(skip, limit) {
   check(skip, Number);
   check(limit, Number);
